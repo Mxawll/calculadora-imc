@@ -1,0 +1,179 @@
+/* reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* variables */
+:root {
+   --base-white: #fff;
+   --base-red: #F03E3E;
+   --dark-blue: #040924;
+   --dark-gren: #00453A;
+   --dark-teal: #0C3440;
+   --ice-blue: #DCE2E9;
+   --turquoise: #02799D;
+   --blue-gray: #212529;
+}
+
+/* body */
+body {
+   background: var(--dark-blue);
+}
+
+body,
+button,
+input {
+   font-family: "Roboto", sans-serif;
+}
+
+/* container */
+.container {
+   display: grid;
+   place-items: center;
+   height: 100vh;
+}
+
+/* main */
+.card {
+   border-radius: 6px;
+   background: var(--base-white);
+   box-shadow: 0px .125rem .25rem 0px #0000001a;
+
+   width: min(26.75rem, 90%);
+
+   margin-bottom: 7.5rem;
+   padding: 3rem 4rem 4rem;
+}
+
+.card form,
+.card .input-wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.card h1 {
+   margin-bottom: 1rem;
+}
+
+.title {
+   color: var(--dark-teal);
+   font-size: 32px;
+   font-weight: 700;
+   line-height: 40px;
+}
+
+.input-wrapper label {
+   color: var(--dark-gren);
+   font-size: .875rem;
+   line-height: 1.125rem;
+}
+
+.input-wrapper input {
+   border-radius: .25rem;
+   border: 1px solid var(--turquoise);
+   background: var(--ice-blue);
+
+   font-size: 1rem;
+
+   padding: 1rem;
+}
+
+.input-wrapper input:placeholder-shown {
+   color: var(--blue-gray);
+   line-height: 20px;
+}
+
+.input-wrapper input:focus {
+   outline: .125rem solid var(--turquoise);
+}
+
+form button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: .5rem;
+
+   border-radius: 4px;
+   border: none;
+   background: var(--turquoise);
+
+   color: var(--base-white);
+   font-size: 1rem;
+   font-weight: 700;
+   line-height: 1.25rem;
+
+   cursor: pointer;
+
+   margin-top: 1rem;
+   padding: 16px;
+
+   transition: background .3s;
+}
+
+form button:hover {
+   background: #046a88;
+}
+
+/* modal */
+.modal-wrapper {
+   position: absolute;
+   inset: 0;
+
+   display: grid;
+   place-items: center;
+
+   background: #000000b3;
+}
+
+.modal {
+   position: relative;
+   text-align: center;
+}
+
+.hide {
+   display: none;
+}
+
+.modal button {
+   position: absolute;
+   right: 1rem;
+   top: 1rem;
+
+   border: none;
+   background: none;
+
+   transition: transform .3s;
+}
+
+.modal .close:hover {
+   transform: scale(1.3);
+   cursor: pointer;
+}
+/* alert-error */
+.alert-error {
+   position: absolute;
+   top: 0;
+   right: 0;
+   left: 0;
+
+   background: var(--base-red);
+
+   color: var(--base-white);
+   font-weight: 700;
+   line-height: 1.25rem;
+   text-align: center;
+
+   padding: .5rem;
+
+   animation: translateY 1s;
+}
+
+/* animations */
+@keyframes translateY {
+   from {
+      transform: translateY(-100%);
+   }
+}
